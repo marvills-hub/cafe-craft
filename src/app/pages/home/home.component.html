@@ -1,0 +1,183 @@
+<section class="hero">
+  <div class="container hero-container">
+    <div class="hero-content">
+      <span class="hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        {{ cafe.home.eyebrow }}
+      </span>
+      <h1>
+        {{ cafe.home.heroTitle }} <span>{{ cafe.home.heroHighlight }}</span>
+      </h1>
+      <p class="hero-description">
+        {{ cafe.home.heroDescription }}
+      </p>
+      <div class="hero-actions">
+        <a routerLink="/menu" class="btn btn-primary">
+          Explore Our Menu
+          <span>→</span>
+        </a>
+        <a routerLink="/contact" class="btn btn-outline">Visit Our Café</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <strong>100%</strong>
+          <span>Freshly brewed</span>
+        </div>
+        <span class="stat-divider"></span>
+        <div class="hero-stat">
+          <strong>Daily</strong>
+          <span>Fresh pastries</span>
+        </div>
+        <span class="stat-divider"></span>
+        <div class="hero-stat">
+          <strong>Local</strong>
+          <span>Café experience</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-shape hero-shape-one"></div>
+      <div class="hero-shape hero-shape-two"></div>
+      <div class="hero-image">
+        <img [src]="cafe.home.heroImage" [alt]="'Freshly brewed coffee at ' + cafe.brand.name" />
+        <div class="hero-image-overlay"></div>
+        <div class="hero-image-label">
+          <span>{{ cafe.home.imageLabel }}</span>
+          <strong>{{ cafe.home.imageCaption }}</strong>
+        </div>
+      </div>
+      <div class="floating-card floating-rating">
+        <span class="floating-icon">★</span>
+        <div>
+          <strong>Made with care</strong>
+          <small>Every cup, every day</small>
+        </div>
+      </div>
+      <div class="floating-card floating-product">
+        <span>{{ cafe.home.favoriteLabel }}</span>
+        <strong>{{ cafe.home.favoriteProduct }}</strong>
+        <small>{{ cafe.home.favoriteDescription }}</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section welcome-section">
+  <div class="container welcome-grid">
+    <div class="welcome-heading">
+      <span class="section-tag">{{ cafe.home.welcomeEyebrow }}</span>
+      <h2 class="section-title">
+        {{ cafe.home.welcomeTitle }}
+        <span>{{ cafe.home.welcomeHighlight }}</span>
+      </h2>
+    </div>
+    <div class="welcome-content">
+      <p>{{ cafe.home.welcomeParagraphOne }}</p>
+      <p>{{ cafe.home.welcomeParagraphTwo }}</p>
+      <a routerLink="/about" class="text-link">
+        Discover our story
+        <span>→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section featured-section">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <span class="section-tag">{{ cafe.home.featuredEyebrow }}</span>
+        <h2 class="section-title">
+          {{ cafe.home.featuredTitle }}
+          <span>{{ cafe.home.featuredHighlight }}</span>
+        </h2>
+      </div>
+      <a routerLink="/menu" class="view-menu-link">
+        View full menu
+        <span>→</span>
+      </a>
+    </div>
+
+    <div class="featured-grid">
+      @for (item of featuredItems; track item.name) {
+        <article class="featured-card" [class.featured-main]="item.popular">
+          @if (item.popular) {
+            <div class="popular-label">Most Popular</div>
+          }
+          <div class="featured-number">
+            {{ item.number }}
+          </div>
+          <div class="featured-image">
+            <img [src]="item.image" [alt]="item.name" loading="lazy" />
+          </div>
+          <div class="featured-content">
+            <span class="featured-category">{{ item.category }}</span>
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.description }}</p>
+            <strong class="featured-price">
+              {{ formatPrice(item.price) }}
+            </strong>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section experience-section">
+  <div class="container">
+    <div class="experience-heading">
+      <span class="section-tag">{{ cafe.home.experienceEyebrow }}</span>
+      <h2 class="section-title">
+        {{ cafe.home.experienceTitle }}
+        <span>{{ cafe.home.experienceHighlight }}</span>
+      </h2>
+    </div>
+
+    <div class="experience-grid">
+      @for (experience of experiences; track experience.number) {
+        <article class="experience-card">
+          <div class="experience-icon">
+            {{ experience.number }}
+          </div>
+          <h3>{{ experience.title }}</h3>
+          <p>{{ experience.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="visit-section">
+  <div class="container visit-container">
+    <div class="visit-content">
+      <span class="section-tag">{{ cafe.home.visitEyebrow }}</span>
+      <h2>
+        {{ cafe.home.visitTitle }}
+        <span>{{ cafe.home.visitHighlight }}</span>
+      </h2>
+      <p>{{ cafe.home.visitDescription }}</p>
+      <div class="visit-actions">
+        <a routerLink="/contact" class="btn btn-light">
+          Find Our Café
+          <span>→</span>
+        </a>
+        <a routerLink="/menu" class="visit-menu-link">Browse our menu</a>
+      </div>
+    </div>
+
+    <div class="visit-details">
+      <div>
+        <span>LOCATION</span>
+        <strong>{{ cafe.contact.addressLine1 }}</strong>
+        <p>{{ cafe.contact.addressLine2 }}</p>
+      </div>
+      <div>
+        <span>OPEN DAILY</span>
+        <strong>From 7:00 AM</strong>
+        <p>See Contact page for full hours</p>
+      </div>
+    </div>
+  </div>
+</section>

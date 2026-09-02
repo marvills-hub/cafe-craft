@@ -1,12 +1,23 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+import { CafeThemeService } from './core/services/cafe-theme.service';
+import { FooterComponent } from './layout/footer/footer.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+
 @Component({
-  imports: [RouterOutlet],
   selector: 'app-root',
-  styleUrl: './app.scss',
+  standalone: true,
+
+  imports: [RouterOutlet, NavbarComponent, FooterComponent],
+
   templateUrl: './app.html',
+  styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('cafe-craft');
+  private readonly cafeThemeService = inject(CafeThemeService);
+
+  constructor() {
+    this.cafeThemeService.applyTheme();
+  }
 }

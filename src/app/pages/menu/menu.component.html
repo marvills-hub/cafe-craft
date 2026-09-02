@@ -1,0 +1,58 @@
+<section class="menu-hero">
+  <div class="container">
+    <span class="section-tag">OUR MENU</span>
+
+    <h1>
+      Crafted for every
+      <span>coffee moment.</span>
+    </h1>
+
+    <p>
+      Explore our selection of handcrafted drinks, freshly baked pastries, and comforting café
+      favorites.
+    </p>
+  </div>
+</section>
+
+<section class="section menu-section">
+  <div class="container">
+    <div class="category-filter">
+      <button
+        *ngFor="let category of categories"
+        type="button"
+        [class.active]="activeCategory === category"
+        (click)="setCategory(category)"
+      >
+        {{ category }}
+      </button>
+    </div>
+
+    <div class="menu-grid">
+      <article class="menu-card" *ngFor="let item of filteredMenuItems">
+        <div class="menu-card-top">
+          <div>
+            <span class="menu-category">
+              {{ item.category }}
+            </span>
+
+            <h2>{{ item.name }}</h2>
+          </div>
+
+          <span *ngIf="item.featured" class="featured-badge"> Popular </span>
+        </div>
+
+        <p>
+          {{ item.description }}
+        </p>
+
+        <div class="menu-card-footer">
+          <span class="price">
+            {{ formatPrice(item.price) }}
+          </span>
+
+          <span class="availability"> Available daily </span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

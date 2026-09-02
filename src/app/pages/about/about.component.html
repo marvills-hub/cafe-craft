@@ -1,0 +1,128 @@
+<section class="about-hero">
+  <div class="container about-hero-container">
+    <div class="about-content">
+      <span class="section-tag">
+        {{ cafe.about.eyebrow }}
+      </span>
+
+      <h1>
+        {{ cafe.about.title }}
+
+        <span>
+          {{ cafe.about.highlight }}
+        </span>
+      </h1>
+
+      <p>
+        {{ cafe.about.description }}
+      </p>
+    </div>
+
+    <div class="about-visual">
+      <div class="about-image">
+        <img src="assets/images/cafe/about-cafe.webp" [alt]="cafe.brand.name + ' café interior'" />
+
+        <div class="about-image-overlay"></div>
+
+        <div class="about-image-caption">
+          <span> EST. {{ cafe.about.establishedYear }} </span>
+
+          <strong> Built around coffee, comfort, and community. </strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section story-section">
+  <div class="container story-grid">
+    <div>
+      <span class="section-tag"> HOW IT STARTED </span>
+
+      <h2 class="section-title">Crafted from a love for good coffee and good company.</h2>
+    </div>
+
+    <div class="story-copy">
+      <p>
+        What started as a passion for carefully brewed coffee grew into a place where people can
+        slow down, catch up, work quietly, or simply enjoy their favorite drink.
+      </p>
+
+      <p>
+        Every detail at {{ cafe.brand.name }} is designed to feel thoughtful, from the drinks we
+        prepare to the atmosphere we create.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section values-section">
+  <div class="container">
+    <div class="values-heading">
+      <span class="section-tag"> WHAT WE VALUE </span>
+
+      <h2 class="section-title">Simple things, done with care.</h2>
+    </div>
+
+    <div class="values-grid">
+      <article class="value-card">
+        <span class="value-number"> 01 </span>
+
+        <h3>Quality</h3>
+
+        <p>We focus on ingredients and preparation that make every cup worth coming back for.</p>
+      </article>
+
+      <article class="value-card">
+        <span class="value-number"> 02 </span>
+
+        <h3>Comfort</h3>
+
+        <p>A welcoming space where you can relax, connect, work, or simply enjoy the moment.</p>
+      </article>
+
+      <article class="value-card">
+        <span class="value-number"> 03 </span>
+
+        <h3>Community</h3>
+
+        <p>
+          We believe cafés are more than places for coffee. They are spaces where people and stories
+          come together.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="about-cta">
+  <div class="container about-cta-container">
+    <div>
+      <span class="section-tag"> VISIT {{ cafe.brand.name }} </span>
+
+      <h2>
+        Come experience it
+        <span>for yourself.</span>
+      </h2>
+    </div>
+
+    <div class="about-cta-info">
+      <div>
+        <span> LOCATION </span>
+
+        <strong>
+          {{ cafe.contact.addressLine1 }}
+        </strong>
+
+        <p>
+          {{ cafe.contact.addressLine2 }}
+        </p>
+      </div>
+
+      <a routerLink="/contact" class="about-link">
+        Plan your visit
+        <span>→</span>
+      </a>
+    </div>
+  </div>
+</section>

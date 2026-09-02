@@ -1,0 +1,208 @@
+.menu-hero {
+  padding: 110px 24px 80px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(circle at 50% 10%, rgba(215, 181, 140, 0.28), transparent 38%),
+    var(--color-background);
+}
+
+.menu-hero h1 {
+  max-width: 850px;
+  margin: 0 auto;
+
+  font-size: clamp(48px, 7vw, 82px);
+  letter-spacing: -2px;
+}
+
+.menu-hero h1 span {
+  color: var(--color-primary);
+}
+
+.menu-hero p {
+  max-width: 650px;
+  margin: 24px auto 0;
+
+  color: var(--color-muted);
+
+  font-size: 17px;
+}
+
+.menu-section {
+  background: var(--color-surface);
+}
+
+.category-filter {
+  margin-bottom: 50px;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.category-filter button {
+  min-height: 44px;
+  padding: 0 20px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 100px;
+
+  color: var(--color-text);
+
+  background: var(--color-background);
+
+  font-weight: 600;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.category-filter button:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--color-primary);
+
+  color: var(--color-primary);
+}
+
+.category-filter button.active {
+  border-color: var(--color-primary);
+
+  color: #fff;
+
+  background: var(--color-primary);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.menu-card {
+  min-height: 250px;
+  padding: 28px;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+
+  background: var(--color-background);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(156, 107, 67, 0.28);
+
+  box-shadow: var(--shadow-card);
+}
+
+.menu-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.menu-category {
+  margin-bottom: 8px;
+
+  display: inline-block;
+
+  color: var(--color-primary);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.menu-card h2 {
+  font-size: 25px;
+}
+
+.featured-badge {
+  flex-shrink: 0;
+
+  padding: 6px 10px;
+
+  border-radius: 100px;
+
+  color: var(--color-primary-dark);
+
+  background: var(--color-soft);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.menu-card > p {
+  margin-top: 18px;
+
+  color: var(--color-muted);
+
+  font-size: 14px;
+}
+
+.menu-card-footer {
+  margin-top: auto;
+  padding-top: 28px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.price {
+  color: var(--color-primary);
+
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.availability {
+  color: var(--color-muted);
+
+  font-size: 11px;
+}
+
+@media (max-width: 1000px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .menu-hero {
+    padding: 80px 20px 60px;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-filter {
+    justify-content: flex-start;
+  }
+
+  .menu-card {
+    min-height: 220px;
+  }
+}

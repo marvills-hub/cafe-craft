@@ -1,0 +1,79 @@
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a routerLink="/" class="brand">
+        <div class="brand-mark">
+          @if (cafe.brand.logo) {
+            <img [src]="cafe.brand.logo" [alt]="cafe.brand.name + ' logo'" />
+          } @else {
+            <span>
+              {{ cafe.brand.shortName }}
+            </span>
+          }
+        </div>
+
+        <div>
+          <strong>
+            {{ cafe.brand.name }}
+          </strong>
+
+          <small>
+            {{ cafe.brand.tagline }}
+          </small>
+        </div>
+      </a>
+
+      <p>
+        {{ cafe.brand.description }}
+      </p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Explore</h3>
+
+      <a routerLink="/">Home</a>
+      <a routerLink="/about">About</a>
+      <a routerLink="/menu">Menu</a>
+      <a routerLink="/contact">Contact</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Visit</h3>
+
+      <span>
+        {{ cafe.contact.addressLine1 }}
+      </span>
+
+      <span>
+        {{ cafe.contact.addressLine2 }}
+      </span>
+
+      <a [href]="'tel:' + cafe.contact.phone">
+        {{ cafe.contact.phone }}
+      </a>
+
+      <a [href]="'mailto:' + cafe.contact.email">
+        {{ cafe.contact.email }}
+      </a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Follow</h3>
+
+      @for (social of cafe.socialLinks; track social.platform) {
+        <a [href]="social.url" target="_blank" rel="noopener noreferrer">
+          {{ social.platform }}
+        </a>
+      }
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <span> © {{ currentYear }} {{ cafe.brand.name }}. All rights reserved. </span>
+
+    <span class="developer-credit">
+      Developed by
+      <a href="https://marvills.dev" target="_blank" rel="noopener noreferrer"> Marvills </a>
+    </span>
+  </div>
+</footer>
